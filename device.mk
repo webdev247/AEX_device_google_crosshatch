@@ -53,7 +53,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 PRODUCT_PACKAGES += \
     messaging \
-    netutils-wrapper-1.0
+    netutils-wrapper-1.0 \
+    WeatherClient
 
 LOCAL_PATH := device/google/crosshatch
 SRC_MEDIA_HAL_DIR := hardware/qcom/media/sdm845
