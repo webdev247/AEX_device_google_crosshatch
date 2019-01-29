@@ -41,11 +41,12 @@ BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CLANG_COMPILE := true
 #TARGET_KERNEL_CLANG_VERSION := 8.0.3
 TARGET_KERNEL_SOURCE := kernel/google/bluecross
-TARGET_KERNEL_CONFIG := b1c1_defconfig
+TARGET_KERNEL_CONFIG := kirisakura_defconfig
 BOARD_KERNEL_IMAGE_NAME := Image.lz4-dtb
 
 BOARD_KERNEL_BASE        := 0x00000000
@@ -258,5 +259,17 @@ TARGET_USES_MKE2FS := true
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/b1c1-setup.sh
+
+# Cross Compiler (Please refer TARGET_linux-arm.mk and TARGET_arm.mk )
+#TARGET_GCC_VERSION_EXP := 8.2
+#KERNEL_TOOLCHAIN := ~/tools-gcc/aarch64-linux-gnu/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-gnu
+
+#TARGET_GCC_VERSION_EXP := 7.4
+#KERNEL_TOOLCHAIN := /home/burnsyboo/aex/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-$(TARGET_GCC_VERSION_EXP)/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
+
+
 
 -include vendor/google_devices/crosshatch/proprietary/BoardConfigVendor.mk
